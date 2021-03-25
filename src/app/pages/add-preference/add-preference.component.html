@@ -1,0 +1,53 @@
+<div class="add-preference">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8">
+      <form [formGroup]="preferenceForm" (ngSubmit)="saveForm()" novalidate>
+        <div class="form-group">
+          <label>Imię<sup class="text-danger">*</sup></label>
+          <input class="form-control" formControlName="name" placeholder="Wpisz imię">
+          <small *ngIf="formSubmitted && preferenceForm.get('name').hasError('required')" class="text-danger">To pole
+            jest wymagane</small>
+          <small *ngIf="formSubmitted && preferenceForm.get('name').hasError('minlength')" class="text-danger">To pole
+            ma za mało znaków (min. 3)</small>
+        </div>
+        <div class="form-group">
+          <label>Nazwisko<sup class="text-danger">*</sup></label>
+          <input class="form-control" formControlName="surname" placeholder="Wpisz nazwisko">
+          <small *ngIf="formSubmitted && preferenceForm.get('surname').hasError('required')" class="text-danger">To pole
+            jest wymagane</small>
+          <small *ngIf="formSubmitted && preferenceForm.get('surname').hasError('minlength')" class="text-danger">To
+            pole ma za mało znaków (min. 3)</small>
+        </div>
+        <div class="form-group">
+          <label>Numer telefonu</label>
+          <input class="form-control" mask="000-000-000" formControlName="phoneNumber"
+                 placeholder="Wpisz numer telefonu">
+        </div>
+        <div class="form-group">
+          <label>Branża<sup class="text-danger">*</sup></label>
+          <select class="form-control" formControlName="industry">
+            <option *ngFor="let item of industries" [value]="item">{{item}}</option>
+          </select>
+          <small *ngIf="formSubmitted && preferenceForm.get('industry').hasError('required')" class="text-danger">To
+            pole jest wymagane</small>
+        </div>
+        <div class="form-group" *ngIf="preferenceForm.get('industry').value === industryEnum.Industry4">
+          <label>Powód<sup class="text-danger">>*</sup></label>
+          <input class="form-control" formControlName="reason" placeholder="Wpisz powód">
+          <small *ngIf="formSubmitted && preferenceForm.get('reason').hasError('required')" class="text-danger">To pole
+            jest wymagane</small>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" formControlName="agreement">
+          <label class="form-check-label">Zgadzam się z warunkami</label><br/>
+          <small *ngIf="formSubmitted && preferenceForm.get('agreement').hasError('required')" class="text-danger">To
+            pole jest wymagane</small>
+        </div>
+
+        <div class="mt-4">
+          <button class="btn btn-primary" type="submit">Zapisz</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

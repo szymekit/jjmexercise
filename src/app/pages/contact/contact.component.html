@@ -1,0 +1,20 @@
+<div class="contact">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Dane kontaktowe: </h5>
+          <hr/>
+          <div class="row">
+            <div class="col-6">
+              <p *ngFor="let info of contactInfo"><strong>{{info.key}}:</strong></p>
+            </div>
+            <div class="col-6">
+              <p *ngFor="let info of contactInfo"><span>{{info.value}}</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="show-preference" *ngIf="preferences">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Preferencje: </h5>
+          <hr/>
+          <div class="row">
+            <div class="col-6">
+              <p><strong>Imię:</strong></p>
+              <p><strong>Nazwisko:</strong></p>
+              <p><strong>Numer telefonu:</strong></p>
+              <p><strong>Branża:</strong></p>
+              <p><strong>Powód:</strong></p>
+            </div>
+            <div class="col-6">
+              <p>{{preferences?.name}}</p>
+              <p>{{preferences?.surname}}</p>
+              <p>{{preferences?.phoneNumber?.length ? preferences?.phoneNumber : 'nie podano'}}</p>
+              <p>{{preferences?.industry}}</p>
+              <p>{{preferences?.reason.length ? preferences?.reason : 'nie podano'}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

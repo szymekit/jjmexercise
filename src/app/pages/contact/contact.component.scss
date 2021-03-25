@@ -1,0 +1,10 @@
+.contact {
+  .card {
+    .card-item-key {
+      min-width: 130px;
+      @media screen and (min-width: 786px) {
+        min-width: 200px;
+      }
+    }
+  }
+}
