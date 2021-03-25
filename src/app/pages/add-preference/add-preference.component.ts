@@ -35,6 +35,7 @@ export class AddPreferenceComponent implements OnInit {
         this.preferenceForm.controls.reason.setValidators([Validators.required]);
         this.preferenceForm.controls.reason.updateValueAndValidity();
       } else {
+        this.preferenceForm.controls.reason.patchValue('');
         this.preferenceForm.controls.reason.setValidators([]);
         this.preferenceForm.controls.reason.updateValueAndValidity();
       }

@@ -32,7 +32,7 @@
             pole jest wymagane</small>
         </div>
         <div class="form-group" *ngIf="preferenceForm.get('industry').value === industryEnum.Industry4">
-          <label>Powód<sup class="text-danger">>*</sup></label>
+          <label>Powód<sup class="text-danger">*</sup></label>
           <input class="form-control" formControlName="reason" placeholder="Wpisz powód">
           <small *ngIf="formSubmitted && preferenceForm.get('reason').hasError('required')" class="text-danger">To pole
             jest wymagane</small>
